@@ -38,11 +38,16 @@ gulp compile-site
 #####################################
 DONE
 #####################################
+
 NOW when you write js/sass and press CTRL+S to save your work
 your opened CMD must start log messages that gulp is compiling your files [success/fail].
 
 #####################################
 NOTICE
 #####################################
+
 Whenever you start to coding, you have to open cmd at project ROOT and to type:
 gulp watch-site
+
+The source code is in SRC folder
+The compiled source code is in PUBLIC folder

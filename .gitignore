@@ -1,7 +1,3 @@
-#ignore compiled/minified files in public due avoiding merges on commit/push
-/public/js/*.js
-/public/css/*.css
-
 # Logs
 logs
 *.log
@@ -38,3 +34,4 @@ node_modules
 
 # WebStorm
 .idea/
+/public/css/main.css.map

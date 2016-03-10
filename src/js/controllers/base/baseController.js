@@ -1,1 +1,1 @@
-console.log('Hello from Base Controller');
+console.log('Hello World from Base Controller');

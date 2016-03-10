@@ -35,6 +35,5 @@ node_modules
 # WebStorm
 .idea/
 /public/css/main.css.map
-/public/css
-/public/js
-/public/js
+/public/css/main.css
+/public/js/main.js

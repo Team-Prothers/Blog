@@ -7,9 +7,9 @@
   .controls {
     display: none;
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 0;
-    z-index: 1;
     width: 100%;
     font-size: 5rem;
     @include addTranslate(0, -50%);
@@ -41,6 +41,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
     width: 1000%;
     height: 100%;
 

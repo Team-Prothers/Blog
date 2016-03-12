@@ -32,6 +32,38 @@
       bottom: inherit;
     }
 
+    @include respond-to('medium') {
+      top: 0;
+      padding: 0.5rem;
+    }
+
+    // Mobile Nav
+    .mobile-nav {
+      position: relative;
+      // Sandwich Menu
+      .sandwich {
+        @extend .fa;
+        @extend .fa-bars;
+        color: $white;
+        border: none;
+      }
+
+      // Breakpoint 768
+      @include respond-to('medium') {
+        width: 38px;
+        height: 34px;
+
+        @include on-event {
+          width: 100%;
+          height: 10%;
+          // Open nav
+          .nav {
+            display: block;
+          }
+        }
+      }
+    }
+
     // Nav
     .nav {
       .nav-link {
@@ -41,6 +73,18 @@
         &:hover {
           @include addRotation(360);
           @include addTransition(all, .5s);
+        }
+      }
+
+      // Breakpoint 768
+      @include respond-to('medium') {
+        display: none;
+
+        &.nav-left,
+        &.nav-right {
+          float: none;
+          width: 100%;
+          text-align: center;
         }
       }
 

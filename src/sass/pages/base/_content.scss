@@ -1,10 +1,9 @@
 .content {
+  display: table;
   width: 100%;
   min-height: 102.4rem;
   background-color: $defaultContentBackground;
-  @include clearFix(both);
-  display: table;
-  height: 100%;
+  padding-top: 0.5rem;
 
   .inner-content {
     display: table-cell;

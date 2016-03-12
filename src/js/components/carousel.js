@@ -7,13 +7,8 @@ $(function() {
         slide: function(slides, currentSlide) {
             slides.css('transform', 'translate3d(-'+ currentSlide * 100 +'%, 0, 0)');
         },
-        init: function() {
-            var currentSlide = 0,
-                carouselNode = $(this.carouselSelector),
-                carouselControls = carouselNode.find(this.controlSelector),
-                slides = carouselNode.find(this.slideSelector),
-                slidesCount = slides.length || 0,
-                direction = 'up';
+        bindEvents: function(slides, carouselControls, currentSlide) {
+            var slidesCount = slides.length || 0;
 
             carouselControls.on('click', function() {
                 var clickedControl = $(this);
@@ -36,6 +31,15 @@ $(function() {
                     }
                 }
             });
+        },
+        init: function() {
+            var currentSlide = 0,
+                carouselNode = $(this.carouselSelector),
+                carouselControls = carouselNode.find(this.controlSelector),
+                slides = carouselNode.find(this.slideSelector),
+                direction = 'up';
+
+            this.bindEvents(slides, carouselControls, currentSlide);
         }
     };
 

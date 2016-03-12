@@ -57,4 +57,10 @@
       }
     }
   }
+
+  @include respond-to('small') {
+    .controls {
+      font-size: 4rem;
+    }
+  }
 }

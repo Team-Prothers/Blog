@@ -42,6 +42,7 @@
       position: relative;
       // Sandwich Menu
       .sandwich {
+        display: none;
         @extend .fa;
         @extend .fa-bars;
         color: $white;
@@ -52,6 +53,10 @@
       @include respond-to('medium') {
         width: 38px;
         height: 34px;
+
+        .sandwich {
+          display: block;
+        }
 
         @include on-event {
           width: 100%;

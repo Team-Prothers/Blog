@@ -38,12 +38,12 @@
     left: 0;
     width: 1000%;
     height: 100%;
-    @include addTransition(all, .5s);
 
     .slide {
       float: left;
       width: 10%;
       height: 100%;
+      @include addTransition(all, .5s);
 
       .slide-image {
         width: 100%;

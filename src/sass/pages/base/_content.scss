@@ -1,3 +1,4 @@
+// Content
 .content {
   display: table;
   width: 100%;
@@ -5,11 +6,13 @@
   background-color: $defaultContentBackground;
   padding-top: 0.5rem;
 
+  // Inner Content
   .inner-content {
     display: table-cell;
     background-color: $innerContentBackgroundColor;
     width: 80%;
 
+    // Inner Content Expanded
     &.expanded {
       width: 95%;
     }

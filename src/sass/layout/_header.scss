@@ -3,6 +3,7 @@
   background: url(#{$baseUrl}/img/header_image.jpg) center no-repeat;
   background-size: cover;
 
+  // Breakpoint 768
   @include respond-to('medium') {
     background-size: 100%;
   }
@@ -25,18 +26,29 @@
     position: absolute;
     bottom: 0;
 
+    // Main Navigation Sticky
     &.sticky {
       background-color: #333;
       bottom: inherit;
     }
 
-    .nav-link {
-      font-size: 3rem;
-      @include addTransition(all, .5s);
-
-      &:hover {
-        @include addRotation(360);
+    // Nav
+    .nav {
+      .nav-link {
+        font-size: 3rem;
         @include addTransition(all, .5s);
+
+        &:hover {
+          @include addRotation(360);
+          @include addTransition(all, .5s);
+        }
+      }
+
+      // Breakpoint 480
+      @include respond-to('small') {
+        .nav-link {
+          font-size: 2.4rem;
+        }
       }
     }
   }

@@ -1,8 +1,10 @@
 // Navigation
 .navigation {
   background-color: transparent;
+  width: 100%;
   text-align: left;
 
+  // Navigation Sticky
   &.sticky {
     position: fixed;
     top: 0;
@@ -12,13 +14,30 @@
     background-color: #222;
   }
 
+  // Nav
+  .nav {
+    @include clearFix(both);
+
+    // Nav Left
+    &.nav-left {
+      float: left;
+      width: 60%;
+    }
+    // Nav Right
+    &.nav-right {
+      float: right;
+      text-align: right;
+      width: 40%;
+    }
+  }
+
   // Nav Item
   .nav-item {
     display: inline-block;
 
     // Nav Link
     .nav-link {
-      display: block;
+      display: inline-block;
       padding: 1rem;
       color: #FFF;
       text-decoration: none;
@@ -40,6 +59,16 @@
       // Link Email
       &.link-email {
         @extend .fa-envelope;
+      }
+
+      // Link Search
+      &.link-search {
+        @extend .fa-search;
+      }
+
+      // Link Sign In
+      &.link-sign-in {
+        @extend .fa-sign-in;
       }
 
       // Link Facebook

@@ -1,9 +1,11 @@
+// Carousel
 .carousel {
   position: relative;
   height: 0;
   padding: 25% 0;
   overflow: hidden;
 
+  // Controls
   .controls {
     display: none;
     position: absolute;
@@ -13,22 +15,39 @@
     width: 100%;
     font-size: 5rem;
     @include addTranslate(0, -50%);
+    @include addTransition(all, .4s);
 
+    // Breakpoint 480
+    @include respond-to('small') {
+      @include addTransition(all, .4s);
+      font-size: 4rem;
+    }
+
+    // Breakpoint 320
+    @include respond-to('extra-small') {
+      @include addTransition(all, .4s);
+      font-size: 3rem;
+    }
+
+    // Controls enabled
     &.enabled {
       display: block;
     }
 
+    // Control
     .control {
       @extend .fa;
       border: none;
       color: $white;
 
+      // Control prev
       &.prev {
         @extend .fa-chevron-circle-left;
         float: left;
         margin-left: 5%;
       }
 
+      // Control next
       &.next {
         @extend .fa-chevron-circle-right;
         float: right;
@@ -37,6 +56,7 @@
     }
   }
 
+  // Slide wrapper
   .slide-wrapper {
     position: absolute;
     top: 0;
@@ -45,22 +65,18 @@
     width: 1000%;
     height: 100%;
 
+    // Slide
     .slide {
       float: left;
       width: 10%;
       height: 100%;
       @include addTransition(all, .5s);
 
+      // Slide image
       .slide-image {
         width: 100%;
         height: 100%;
       }
-    }
-  }
-
-  @include respond-to('small') {
-    .controls {
-      font-size: 4rem;
     }
   }
 }

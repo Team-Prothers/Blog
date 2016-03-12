@@ -10,6 +10,23 @@ $white: #FFF !default;
  */
 $black: #000 !default;
 
+// Background Colors
+
+/*
+ *  @type {Color} $sidebarBackgroundColor
+ */
+$sidebarBackgroundColor: #333;
+
+/*
+ *  @type {Color} $footerBackgroundColor
+ */
+$footerBackgroundColor: #333;
+
+/*
+ *  @type {Color} $innerContentBackgroundColor
+ */
+$innerContentBackgroundColor: #DDD;
+
 // Defaults
 $defaultFontStack: 62.5% 'Arial', 'Calibri', sans-serif;
 $defaultColor: $black;

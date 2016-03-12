@@ -1,0 +1,43 @@
+// Main Header
+#main-header {
+  background: url(#{$baseUrl}/img/header_image.jpg) center no-repeat;
+  background-size: cover;
+
+  @include respond-to('medium') {
+    background-size: 100%;
+  }
+
+  // Main Logo
+  #main-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20vw;
+    height: 20vw;
+
+    @include addTranslate(-50%, -50%);
+  }
+
+  // Main Navigation
+  #main-navigation {
+    @extend .navigation;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 0;
+
+    &.sticky {
+      background-color: #333;
+      bottom: inherit;
+    }
+
+    .nav-link {
+      font-size: 3rem;
+      @include addTransition(all, .5s);
+
+      &:hover {
+        @include addRotation(360);
+        @include addTransition(all, .5s);
+      }
+    }
+  }
+}

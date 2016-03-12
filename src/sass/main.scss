@@ -15,7 +15,11 @@
 'base/helpers';
 
 // COMPONENTS
-@import 'components/buttons';
+@import
+  'components/buttons',
+  'components/navigation',
+  'components/carousel',
+  'components/sidebar';
 
 // LAYOUT
 @import
@@ -23,6 +27,8 @@
   'layout/footer';
 
 // PAGES
+@import
+  'pages/base/content';
 /*
   HOME
   ABOUT

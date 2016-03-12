@@ -1,0 +1,54 @@
+.carousel {
+  position: relative;
+  height: 0;
+  padding: 25% 0;
+  overflow: hidden;
+
+  .controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    font-size: 5rem;
+    @include addTranslate(0, -50%);
+
+    .control {
+      @extend .fa;
+      border: none;
+      color: $white;
+
+      &.prev {
+        @extend .fa-chevron-circle-left;
+        float: left;
+        margin-left: 5%;
+      }
+
+      &.next {
+        @extend .fa-chevron-circle-right;
+        float: right;
+        margin-right: 5%;
+      }
+    }
+  }
+
+  .slide-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000%;
+    height: 100%;
+    @include addTransition(all, .5s);
+
+    .slide {
+      float: left;
+      width: 10%;
+      height: 100%;
+
+      .slide-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

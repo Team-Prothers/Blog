@@ -9,5 +9,9 @@
     display: table-cell;
     background-color: $innerContentBackgroundColor;
     width: 80%;
+
+    &.expanded {
+      width: 95%;
+    }
   }
 }

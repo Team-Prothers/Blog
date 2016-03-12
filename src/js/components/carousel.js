@@ -7,13 +7,19 @@ $(function() {
         slide: function(slides, currentSlide) {
             slides.css('transform', 'translate3d(-'+ currentSlide * 100 +'%, 0, 0)');
         },
+        autoSlide: function() {
+
+        },
         bindEvents: function(slides, carouselControls, currentSlide) {
             var slidesCount = slides.length || 0;
 
+            // Enable controls
+            carouselControls.parent().addClass('enabled');
+            // Attach click event
             carouselControls.on('click', function() {
                 var clickedControl = $(this);
 
-                // SLIDE TO PREV
+                // Slide to the PREV
                 if (clickedControl.hasClass('prev')) {
                     if (currentSlide - 1 >= 0) {
                         currentSlide -= 1;
@@ -22,7 +28,7 @@ $(function() {
                     }
                 }
 
-                // SLIDE TO NEXT
+                // Slide to the NEXT
                 if (clickedControl.hasClass('next')) {
                     if (currentSlide + 1 < slidesCount) {
                         currentSlide += 1;
@@ -33,13 +39,24 @@ $(function() {
             });
         },
         init: function() {
-            var currentSlide = 0,
-                carouselNode = $(this.carouselSelector),
+            var carouselNode = $(this.carouselSelector),
                 carouselControls = carouselNode.find(this.controlSelector),
                 slides = carouselNode.find(this.slideSelector),
+                currentSlide = 0,
                 direction = 'up';
 
-            this.bindEvents(slides, carouselControls, currentSlide);
+            // If there are slides and they are more than 1
+            if (carouselNode && slides.length > 1) {
+                // If auto slide is ON
+                if (carouselNode.data('autoslide')) {
+                    this.autoSlide();
+                }
+
+                // If controls are enabled
+                if (carouselNode.data('controls')) {
+                    this.bindEvents(slides, carouselControls, currentSlide);
+                }
+            }
         }
     };
 

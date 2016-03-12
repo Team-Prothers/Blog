@@ -5,6 +5,7 @@
   overflow: hidden;
 
   .controls {
+    display: none;
     position: absolute;
     top: 50%;
     left: 0;
@@ -12,6 +13,10 @@
     width: 100%;
     font-size: 5rem;
     @include addTranslate(0, -50%);
+
+    &.enabled {
+      display: block;
+    }
 
     .control {
       @extend .fa;

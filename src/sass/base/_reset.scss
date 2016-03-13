@@ -7,12 +7,14 @@ html {
   font: $defaultFontStack;
   color: $defaultColor;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 // Reset Body
 body {
   background-color: $defaultBackgroundColor;
   text-align: center;
+  overflow-x: hidden;
 }
 
 // Reset Main Wrapper

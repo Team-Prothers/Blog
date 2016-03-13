@@ -1,14 +1,15 @@
 // Sidebar
 .sidebar {
-  padding: 0  1rem;
+  float: left;
+  padding: 0 1rem;
   width: 5%;
-  display: table-cell;
   height: 100%;
   background-color: $sidebarBackgroundColor;
+  overflow: hidden;
 
   // Sidebar Expanded
   &.expanded {
-    width: 15%;
+    width: 20%;
   }
 
   // Sidebar Section

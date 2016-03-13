@@ -7,7 +7,7 @@ $(function() {
             headerNode.innerHeight(window.innerHeight);
 
             $(window).on('scroll', function() {
-                if (scrollY >= headerNode.height()) {
+                if (scrollY >= headerNode.innerHeight()) {
                     navigationNode.addClass('sticky');
                 } else {
                     navigationNode.removeClass('sticky');

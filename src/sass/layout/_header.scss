@@ -2,6 +2,18 @@
 #main-header {
   background: url(#{$baseUrl}/img/header_image.jpg) center no-repeat;
   background-size: cover;
+  color: $white;
+
+  .title {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 4rem;
+
+    @include addTranslate(-50%, -15%);
+  }
 
   // Breakpoint 768
   @include respond-to('medium') {

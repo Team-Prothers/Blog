@@ -1,3 +1,9 @@
 #main-footer {
   background-color: $footerBackgroundColor;
+  text-align: right;
+
+  .copy {
+    color: $white;
+    padding: 0.5rem 1rem;
+  }
 }

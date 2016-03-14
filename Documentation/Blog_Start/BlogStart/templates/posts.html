@@ -1,0 +1,21 @@
+﻿<ul>
+    {{#posts}}
+    <li data-id="{{postId}}">
+        <ul>
+            <li>{{title}}</li>
+            <li><img src="{{image._filename}}" alt="Post Image" /></li>
+            <li>{{content}}</li>
+            <li>{{visitsCount}}</li>
+            <li>{{user._id.username}}</li>
+            <li>{{_kmd}}</li>
+            <li>
+                {{#tags}}
+                <span>{{tags._id.name}}</span>
+                {{/tags}}
+            </li>
+        </ul>
+    </li>
+    {{/posts}}
+</ul>
+
+<button type="button" id="addNewPost">Add New Post</button>

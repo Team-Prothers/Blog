@@ -14,12 +14,14 @@ app.commentModel = (function () {
         return this._requester.post(this.serviceUrl, data, true);
     };
 
-    CommentModel.prototype.editComment = function (id, text) {
+    CommentModel.prototype.editComment = function (data) {
         var outputData = {
-            text: text
+            text: data.text,
+            user: data.user,
+            post: data.post
         };
 
-        return this._requester.put(this.serviceUrl + '/' + id, outputData, true);
+        return this._requester.put(this.serviceUrl + '/' + data.id, outputData, true);
     };
 
     CommentModel.prototype.deleteComment = function (id) {

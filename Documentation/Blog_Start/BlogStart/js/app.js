@@ -8,12 +8,15 @@
 
         var userViewBag = app.userViews.load();
         var postViewBag = app.postViews.load();
+        var commentViewBag = app.commentViews.load();
 
         var userModel = app.userModel.load(requester);
         var postModel = app.postModel.load(requester);
+        var commentModel = app.commentModel.load(requester);
 
         var userController = app.userController.load(userModel, userViewBag);
         var postController = app.postController.load(postModel, postViewBag);
+        var commentController = app.commentController.load(commentModel, commentViewBag);
 
         this.get('#/', function () {
             this.redirect('#/login');
@@ -45,6 +48,16 @@
             postController.loadAddPostPage(selector);
         });
 
+        this.get('#/comments', function () {
+            commentController._model.getAllComments().then(function(successData) {
+                console.log(successData);
+            });
+        });
+
+        this.get('#/addNewComment', function () {
+            commentController.loadAddCommentPage(selector);
+        });
+
         this.bind('redirectUrl', function (e, data) {
             this.redirect(data.url);
         });
@@ -59,6 +72,10 @@
 
         this.bind('add-new-post', function (e, data) {
             postController.addNewPost(data);
+        });
+
+        this.bind('add-new-comment', function (e, data) {
+            commentController.addNewComment(data);
         });
     });
     

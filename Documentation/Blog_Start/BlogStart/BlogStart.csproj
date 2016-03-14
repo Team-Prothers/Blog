@@ -73,11 +73,14 @@
     <Content Include="css\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="js\app.js" />
+    <Content Include="js\controllers\commentController.js" />
     <Content Include="js\controllers\postController.js" />
     <Content Include="js\controllers\userController.js" />
     <Content Include="js\helpers\requester.js" />
+    <Content Include="js\models\commentModel.js" />
     <Content Include="js\models\postModel.js" />
     <Content Include="js\models\userModel.js" />
+    <Content Include="js\views\commentViews.js" />
     <Content Include="js\views\postViews.js" />
     <Content Include="js\views\userViews.js" />
     <Content Include="packages.config" />
@@ -112,6 +115,7 @@
     <Content Include="Scripts\q.min.js" />
     <Content Include="Scripts\sammy-0.7.5.js" />
     <Content Include="Scripts\sammy-0.7.5.min.js" />
+    <Content Include="templates\addNewComment.html" />
     <Content Include="templates\addNewPost.html" />
     <Content Include="templates\login.html" />
     <Content Include="templates\posts.html" />

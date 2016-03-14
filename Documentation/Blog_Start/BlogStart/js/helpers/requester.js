@@ -19,6 +19,10 @@ app.requester = (function () {
         return this.makeRequest('PUT', url, data, useSession);
     };
 
+    Requester.prototype.remove = function (url) {
+        return this.makeRequest('DELETE', url);
+    };
+
     Requester.prototype.makeRequest = function (method, url, data, useSession) {
         var token,
             defer = Q.defer(),

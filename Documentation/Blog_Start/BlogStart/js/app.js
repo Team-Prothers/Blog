@@ -49,9 +49,7 @@
         });
 
         this.get('#/comments', function () {
-            commentController._model.getAllComments().then(function(successData) {
-                console.log(successData);
-            });
+            commentController.loadAllComments(selector);
         });
 
         this.get('#/addNewComment', function () {

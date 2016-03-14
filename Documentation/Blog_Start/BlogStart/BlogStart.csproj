@@ -117,6 +117,7 @@
     <Content Include="Scripts\sammy-0.7.5.min.js" />
     <Content Include="templates\addNewComment.html" />
     <Content Include="templates\addNewPost.html" />
+    <Content Include="templates\comments.html" />
     <Content Include="templates\login.html" />
     <Content Include="templates\posts.html" />
     <Content Include="templates\register.html" />

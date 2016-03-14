@@ -17,9 +17,7 @@ app.commentController = (function () {
 
                 successData.forEach(function (comment) {
                     result.comments.push({
-                        title: comment.title,
-                        content: comment.content,
-                        tags: comment.tags,
+                        text: comment.text,
                         commentId: comment._id
                     });
                 });

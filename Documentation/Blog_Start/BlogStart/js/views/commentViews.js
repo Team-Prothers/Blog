@@ -1,6 +1,18 @@
 ﻿var app = app || {};
 
 app.commentViews = (function () {
+    function showAllComments(selector, data) {
+        $.get('templates/comments.html', function (template) {
+            var rendered = Mustache.render(template, data);
+            $(selector).html(rendered);
+            $('#addNewComment').on('click', function (e) {
+                Sammy(function () {
+                    this.trigger('redirectUrl', { url: '#/addNewComment' })
+                });
+            });
+        });
+    }
+
     function showAddNewComment(selector) {
         $.get('templates/addNewComment.html', function (template) {
             var rendered = Mustache.render(template);
@@ -17,6 +29,7 @@ app.commentViews = (function () {
     return {
         load: function () {
             return {
+                showAllComments: showAllComments,
                 showAddNewComment: showAddNewComment
             }
         }

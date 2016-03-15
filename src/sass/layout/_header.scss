@@ -1,0 +1,116 @@
+// Main Header
+#main-header {
+  background: url(#{$baseUrl}/img/header_image.jpg) center no-repeat;
+  background-size: cover;
+  color: $white;
+
+  .title {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 4rem;
+
+    @include addTranslate(-50%, -15%);
+  }
+
+  // Breakpoint 768
+  @include respond-to('medium') {
+    background-size: 100%;
+  }
+
+  // Main Logo
+  #main-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20vw;
+    height: 20vw;
+
+    @include addTranslate(-50%, -50%);
+  }
+
+  // Main Navigation
+  #main-navigation {
+    @extend .navigation;
+    font-size: 3rem;
+    position: absolute;
+    bottom: 0;
+
+    // Main Navigation Sticky
+    &.sticky {
+      background-color: #333;
+      bottom: inherit;
+    }
+
+    @include respond-to('medium') {
+      top: 0;
+      padding: 0.5rem;
+    }
+
+    // Mobile Nav
+    .mobile-nav {
+      position: relative;
+      // Sandwich Menu
+      .sandwich {
+        display: none;
+        @extend .fa;
+        @extend .fa-bars;
+        color: $white;
+        border: none;
+      }
+
+      // Breakpoint 768
+      @include respond-to('medium') {
+        width: 38px;
+        height: 34px;
+
+        .sandwich {
+          display: block;
+        }
+
+        @include on-event {
+          width: 100%;
+          height: 10%;
+          // Open nav
+          .nav {
+            display: block;
+          }
+        }
+      }
+    }
+
+    // Nav
+    .nav {
+      .nav-link {
+        font-size: 3rem;
+        @include addTransition(all, .5s);
+
+        &:hover {
+          @include addRotation(360);
+          @include addTransition(all, .5s);
+        }
+      }
+
+      // Breakpoint 768
+      @include respond-to('medium') {
+        display: none;
+
+        &.nav-left,
+        &.nav-right {
+          float: none;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      // Breakpoint 480
+      @include respond-to('small') {
+        .nav-link {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}

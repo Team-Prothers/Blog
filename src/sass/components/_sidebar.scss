@@ -1,0 +1,33 @@
+// Sidebar
+.sidebar {
+  float: left;
+  padding: 0 1rem;
+  width: 5%;
+  height: 100%;
+  background-color: $sidebarBackgroundColor;
+  overflow: hidden;
+
+  // Sidebar Expanded
+  &.expanded {
+    width: 20%;
+  }
+
+  // Sidebar Section
+  .sidebar-section {
+    // Sidebar Section Posts
+    &.section-posts {
+
+    }
+
+    // Sidebar Section Tags
+    &.section-tags {
+
+    }
+
+    // Title
+    .title {
+      font: 2rem 'Times New Roman';
+      color: $white;
+    }
+  }
+}

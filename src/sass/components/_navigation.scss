@@ -1,0 +1,80 @@
+// Navigation
+.navigation {
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+
+  // Navigation Sticky
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: #222;
+  }
+
+  // Nav
+  .nav {
+    @include clearFix(both);
+
+    // Nav Left
+    &.nav-left {
+      float: left;
+      width: 60%;
+    }
+    // Nav Right
+    &.nav-right {
+      float: right;
+      text-align: right;
+      width: 40%;
+    }
+  }
+
+  // Nav Item
+  .nav-item {
+    display: inline-block;
+
+    // Nav Link
+    .nav-link {
+      display: inline-block;
+      padding: 1rem;
+      color: #FFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 0 0.5rem;
+
+      @extend .fa;
+
+      // Link Home
+      &.link-home {
+        @extend .fa-home;
+      }
+
+      // Link Users
+      &.link-users {
+        @extend .fa-users;
+      }
+
+      // Link Email
+      &.link-email {
+        @extend .fa-envelope;
+      }
+
+      // Link Search
+      &.link-search {
+        @extend .fa-search;
+      }
+
+      // Link Sign In
+      &.link-sign-in {
+        @extend .fa-sign-in;
+      }
+
+      // Link Facebook
+      &.link-facebook {
+        @extend .fa-facebook-square;
+      }
+    }
+  }
+}

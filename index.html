@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog System</title>
+
+    <!--MAIN STYLE-->
+    <link rel="stylesheet" href="public/css/main.css">
+
+    <!--LIBS-->
+    <script src="public/js/libs/jquery-1.12.1.min.js"></script>
+    <script src="public/js/libs/mustache.min.js"></script>
+    <script src="public/js/libs/sammy-latest.min.js"></script>
+</head>
+<body>
+    <!--MAIN WRAPPER-->
+    <div id="main-wrapper">
+        <header id="main-header">
+            <!--MAIN HEADING-->
+            <h1 id="main-heading">
+                <a href="#" title="site name">
+                    <img id="main-logo" src="public/img/logo.png" width="512" height="512" alt="site-logo">
+                </a>
+            </h1>
+
+            <h2 class="title">Welcome to Blog Name</h2>
+
+            <!--MAIN NAVIGATION-->
+            <nav id="main-navigation">
+                <div class="mobile-nav">
+                    <button class="sandwich"></button>
+                    <ul class="nav nav-left">
+                        <li class="nav-item">
+                            <a class="nav-link link-home" href="#main-wrapper" title="Home"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-users" href="#" title="Uses"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-email" href="#" title="Email me"></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-right">
+                        <li class="nav-item">
+                            <a class="nav-link link-sign-in" href="#" title="Sign in"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-search" href="#" title="Search"></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!--CAROUSEL-->
+        <div class="carousel" data-autoslide="true" data-controls="true">
+            <div class="controls">
+                <button class="control prev"></button>
+                <button class="control next"></button>
+            </div>
+            <div class="slide-wrapper">
+                <div class="slide">
+                    <img class="slide-image" src="http://www.twitrcovers.com/wp-content/uploads/2012/11/Cityscapes-Car-l.jpg" alt="slide image">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="http://www.hd-wallpapersdownload.com/upload/bulk-upload/cars-for-background.jpg" alt="slide image">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="http://images.designtrends.com/wp-content/uploads/2015/11/25102004/Car-Background-Designs4.jpg" alt="slide image">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="http://data.hdwallpapers.im/yellow_lotus_car_free_background.jpg" alt="slide image">
+                </div>
+                <div class="slide">
+                    <img class="slide-image" src="http://www.twitrcovers.com/wp-content/uploads/2013/01/Muscle-Dust-Car-l.jpg" alt="slide image">
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT-->
+        <div class="content">
+            <div class="sidebar expanded" id="main-sidebar">
+                <div class="sidebar-section section-posts">
+                    <h3 class="title">Latest posts</h3>
+
+                </div>
+                <div class="sidebar-section section-tags">
+                    <h3 class="title">Most popular tags</h3>
+                </div>
+            </div>
+            <div class="inner-content">
+
+            </div>
+        </div>
+
+        <!--MAIN FOOTER-->
+        <footer id="main-footer">
+            <p class="copy">Copyright 2016<sup>&copy;</sup></p>
+        </footer>
+    </div>
+
+    <!--MAIN JS-->
+    <script src="public/js/main.js"></script>
+</body>
+</html>

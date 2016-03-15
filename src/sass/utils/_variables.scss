@@ -1,0 +1,55 @@
+// Colors
+
+/*
+ *  @type {Color} $white
+ */
+$white: #FFF !default;
+
+/*
+ *  @type {Color} $black
+ */
+$black: #000 !default;
+
+
+/*
+ *  @type {Color} $contentColor
+ */
+$contentColor: #333;
+
+// Background Colors
+
+/*
+ *  @type {Color} $sidebarBackgroundColor
+ */
+$sidebarBackgroundColor: #333;
+
+/*
+ *  @type {Color} $footerBackgroundColor
+ */
+$footerBackgroundColor: #333;
+
+/*
+ *  @type {Color} $innerContentBackgroundColor
+ */
+$innerContentBackgroundColor: #DDD;
+
+// Defaults
+$defaultFontStack: 62.5% 'Arial', 'Calibri', sans-serif;
+$defaultColor: $black;
+$defaultBackgroundColor: #000 !default;
+$defaultContentBackground: #333 !default;
+
+// Base Url;
+$baseUrl: '../../public';
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+/// @see {mixin} respond-to
+$breakpoints: (
+        'extra-small': (max-width: 320px),
+        'small': (max-width: 480px),
+        'medium': (max-width: 768px),
+        'large': (max-width: 1024px),
+        'extra-large': (max-width: 1280px)
+) !default;

@@ -1,0 +1,39 @@
+// VENDORS
+@import 'vendor/font-awesome/font-awesome';
+
+// UTILS
+@import
+'utils/variables',
+'utils/functions',
+'utils/mixins',
+'utils/animations';
+
+// BASE
+@import
+'base/fonts',
+'base/reset',
+'base/helpers';
+
+// COMPONENTS
+@import
+  'components/buttons',
+  'components/navigation',
+  'components/carousel',
+  'components/sidebar',
+  'components/search-bar';
+
+// LAYOUT
+@import
+  'layout/header',
+  'layout/footer';
+
+// PAGES
+@import
+  'pages/base/content';
+/*
+  HOME
+  ABOUT
+  ETC...
+*/
+
+

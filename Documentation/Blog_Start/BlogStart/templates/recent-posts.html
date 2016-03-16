@@ -1,0 +1,22 @@
+﻿<h1>Last {{posts.length}} posts</h1>
+
+<ul>
+    {{#posts}}
+    <li data-id="{{postId}}">
+        <ul>
+            <li>{{title}}</li>
+            <li><img src="{{ image }}" /></li>
+            <li>{{content}}</li>
+            <li>{{visitsCount}}</li>
+            <li>{{user._id.username}}</li>
+            <li>{{_kmd}}</li>
+            <li>
+                {{#tags}}
+                <span>{{tags._id.name}}</span>
+                {{/tags}}
+            </li>
+        </ul>
+    </li>
+    {{/posts}}
+</ul>
+<a href="#/posts">Go to all posts</a>

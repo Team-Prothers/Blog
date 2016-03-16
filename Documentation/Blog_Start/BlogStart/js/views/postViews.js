@@ -13,6 +13,13 @@ app.postViews = (function () {
         });
     }
 
+    function showRecentPosts(selector, data) {
+        $.get('templates/recent-posts.html', function (template) {
+            var rendered = Mustache.render(template, data);
+            $(selector).html(rendered);
+        });
+    }
+
     function showAddNewPost(selector) {
         $.get('templates/addNewPost.html', function (template) {
             var rendered = Mustache.render(template);
@@ -32,6 +39,7 @@ app.postViews = (function () {
         load: function () {
             return {
                 showAllPosts: showAllPosts,
+                showRecentPosts: showRecentPosts,
                 showAddNewPost: showAddNewPost
             }
         }

@@ -21,6 +21,24 @@ app.postController = (function () {
 
                 _this._viewBag.showAllPosts(selector, result);
             });
+    }; 
+
+
+    PostController.prototype.loadRecentPosts = function (selector, numberOfPosts) {
+        var _this = this;
+
+        this._model.getRecentPosts(numberOfPosts)
+            .then(function (successData) {
+                var result = {
+                    posts: []
+                };
+
+                successData.forEach(function (post) {
+                    result.posts.push({ title: post.title, content: post.content, tags: post.tags, postId: post._id });
+                });
+
+                _this._viewBag.showRecentPosts(selector, result);
+            });
     };
 
     PostController.prototype.loadAddPostPage = function (selector) {

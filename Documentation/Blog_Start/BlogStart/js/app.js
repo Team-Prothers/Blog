@@ -5,6 +5,7 @@
         var selector = '#container',
             header = '#header',
             sidebar = '#sidebar';
+        $(sidebar).hide();
 
         var requester = app.requester.config('kid_W1uokZ28kZ', '0ec3f09f5ab14073a2604113d1468c89');
 
@@ -21,7 +22,6 @@
         var commentController = app.commentController.load(commentModel, commentViewBag);
 
         this.get('#/', function () {
-            $('#sidebar').hide();
             this.redirect('#/login');
 
             // test na user
@@ -42,12 +42,16 @@
         this.get('#/logout', function () {
             userController.logout();
             this.redirect('#/');
-            $('#sidebar').hide();
+            $(sidebar).hide();
         });
 
         this.get('#/posts', function () {
-            $('#sidebar').show();
+            $(sidebar).show();
             postController.loadAllPosts(selector);
+        });
+
+        this.get('#/posts/recent', function () {
+            postController.loadRecentPosts(selector, 5);
         });
 
         this.get('#/addNewPost', function () {

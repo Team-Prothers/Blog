@@ -8,14 +8,15 @@
                 <h2>{{title}}</h2></li>
             <li><img src="{{ image }}"/></li>
             <li>{{content}}</li>
-            <li>{{visitsCount}}</li>
-            <li>{{user._id.username}}</li>
-            <li>{{_kmd}}</li>
-            <li>
+            <!--<li>{{visitsCount}}</li>
+            <li>{{user._id.username}}</li>-->
+            <br/>
+            <li><strong>Added on: {{dateAdded}}</strong></li>
+            <!--TODO: Under development <li>
                 {{#tags}}
-                <span>{{tags._id.name}}</span>
+                <span>{{tags}}</span>
                 {{/tags}}
-            </li>
+            </li>-->
         </ul>
         <a href="#/posts/{{postId}}/comments">Show all comments</a>
     </li>

@@ -16,7 +16,13 @@ app.postController = (function () {
                 };
 
                 successData.forEach(function (post) {
-                    result.posts.push({ title: post.title, content: post.content, tags: post.tags, postId: post._id });
+                    result.posts.push({
+                        title: post.title,
+                        content: post.content,
+                        tags: post.tags,
+                        dateAdded: post._kmd.lmt,
+                        postId: post._id
+                    });
                 });
 
                 _this._viewBag.showAllPosts(selector, result);

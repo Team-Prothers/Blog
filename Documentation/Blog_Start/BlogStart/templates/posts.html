@@ -3,7 +3,7 @@
     <li data-id="{{postId}}">
         <ul>
             <li>{{title}}</li>
-            <li><img src="{{image._downloadUrl}}" alt="Post Image" /></li>
+            <li><img src="{{ image }}" /></li> 
             <li>{{content}}</li>
             <li>{{visitsCount}}</li>
             <li>{{user._id.username}}</li>
@@ -17,5 +17,4 @@
     </li>
     {{/posts}}
 </ul>
-
 <button type="button" id="addNewPost">Add New Post</button>

@@ -25,4 +25,5 @@ app.userModel = (function () {
             return new UserModel(requester);
         }
     }
+
 })();

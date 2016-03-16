@@ -2,7 +2,9 @@
 
 (function () {
     app.router = Sammy(function () {
-        var selector = '#container';
+        var selector = '#container',
+            header = '#header',
+            sidebar = '#sidebar';
 
         var requester = app.requester.config('kid_W1uokZ28kZ', '0ec3f09f5ab14073a2604113d1468c89');
 

@@ -1,7 +1,61 @@
-﻿<label for="username">Username</label>
-<input type="text" id="username" />
-<label for="password">Password</label>
-<input type="password" id="password" />
-<label for="confirm-password">Confirm Password</label>
-<input type="password" id="confirm-password" />
-<button type="button" id="register">Register</button>
+﻿<!-- register -->
+<div class="row">
+    <form class="register form-horizontal col-lg-12">
+        <fieldset>
+            <legend>Create a new account</legend>
+            <div class="col-lg-9 form-info">
+                <div class="form-group">
+                    <label for="reg-username" class="col-lg-3 control-label">Username:</label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" id="reg-username" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password" class="col-lg-3 control-label">Password:</label>
+                    <div class="col-lg-9">
+                        <input type="password" class="form-control" id="reg-password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cong-password" class="col-lg-3 control-label">Confirm Password:</label>
+                    <div class="col-lg-9">
+                        <input type="password" class="form-control" id="conf-password" placeholder="Password">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Gender:</label>
+                    <div class="col-lg-9">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender-radio" value="male">Male
+                            </label>
+                            <label>
+                                <input type="radio" name="gender-radio" value="female">Female
+                            </label>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 picture-upload">
+                <div class="form-group">
+                    <img class="thumbnail picture-preview" />
+                </div>
+                <div class="form-group">
+                    <p class="picture-name"></p>
+                    <button type="button" id="upload-file-button" class="btn btn-md btn-info">Upload</button>
+                    <input type="file" id="picture" />
+                    <p>Size limit: 128KB</p>
+                </div>
+            </div>
+            <div class="form-group col-lg-12">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="button" id="register" class="btn btn-lg btn-primary">Register</button>
+                    <span>or</span>
+                    <a href="#/login">Login</a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<!-- end of register -->

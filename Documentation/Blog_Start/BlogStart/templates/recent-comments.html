@@ -1,0 +1,11 @@
+﻿<h1>Last {{comments.length}} comments</h1>
+
+<ul>
+    {{#comments}}
+    <li data-id="{{commentId}}">
+        <span readonly="readonly">{{text}}</span>
+    </li>
+    {{/comments}}
+</ul>
+
+<a href="#/posts">Go to all posts</a>

@@ -129,6 +129,7 @@
     <Content Include="templates\comments.html" />
     <Content Include="templates\login.html" />
     <Content Include="templates\posts.html" />
+    <Content Include="templates\recent-comments.html" />
     <Content Include="templates\recent-posts.html" />
     <Content Include="templates\register.html" />
     <Content Include="Web.config" />

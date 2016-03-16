@@ -26,6 +26,26 @@ app.commentController = (function () {
             });
     };
 
+    CommentController.prototype.loadRecentComments = function (selector, numberOfComments) {
+        var _this = this;
+
+        this._model.getRecentComments(numberOfComments)
+            .then(function (successData) {
+                var result = {
+                    comments: []
+                };
+
+                successData.forEach(function (comment) {
+                    result.comments.push({
+                        text: comment.text,
+                        commentId: comment._id
+                    });
+                });
+
+                _this._viewBag.showRecentComments(selector, result);
+            });
+    };
+
     CommentController.prototype.loadAddCommentPage = function (selector) {
         this._viewBag.showAddNewComment(selector);
     };

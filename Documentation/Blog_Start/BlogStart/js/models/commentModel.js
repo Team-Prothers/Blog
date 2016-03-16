@@ -10,6 +10,11 @@ app.commentModel = (function () {
         return this._requester.get(this.serviceUrl, true);
     };
 
+    CommentModel.prototype.getRecentComments = function (numberOfComments) {
+        return this._requester.get(
+            this.serviceUrl + '?query={}&sort=_kmd.lmt&limit=' + numberOfComments, true);
+    };
+
     CommentModel.prototype.addNewComment = function (data) {
         return this._requester.post(this.serviceUrl, data, true);
     };

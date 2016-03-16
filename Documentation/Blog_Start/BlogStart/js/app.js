@@ -6,6 +6,10 @@
             header = '#header',
             sidebar = '#sidebar';
 
+        if (!sessionStorage["sessionAuth"]) {
+            $(sidebar).hide();
+        }
+
         var requester = app.requester.config('kid_W1uokZ28kZ', '0ec3f09f5ab14073a2604113d1468c89');
 
         var userViewBag = app.userViews.load();
@@ -21,7 +25,6 @@
         var commentController = app.commentController.load(commentModel, commentViewBag);
 
         this.get('#/', function () {
-            $(sidebar).hide();
             this.redirect('#/login');
 
             // test na user

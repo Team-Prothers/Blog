@@ -13,9 +13,7 @@ app.userController = (function () {
     UserController.prototype.register = function (data) {
         this._model.register(data)
             .then(function (successData) {
-                sessionStorage['sessionAuth'] = successData._kmd.authtoken;
-                sessionStorage['userId'] = successData._id;
-
+                setSessionStorage(successData);
                 Sammy(function () {
                     this.trigger('redirectUrl', { url: '#/posts' });
                 });
@@ -29,9 +27,7 @@ app.userController = (function () {
     UserController.prototype.login = function (data) {        
         this._model.login(data)
             .then(function (successData) {
-                sessionStorage['sessionAuth'] = successData._kmd.authtoken;
-                sessionStorage['userId'] = successData._id;
-
+                setSessionStorage(successData);
                 Sammy(function () {
                     this.trigger('redirectUrl', { url: '#/posts' });
                 });
@@ -44,6 +40,18 @@ app.userController = (function () {
                 sessionStorage.clear();
             }).done();
     };
+
+    function setSessionStorage(data) {
+        sessionStorage['sessionAuth'] = data._kmd.authtoken;
+        sessionStorage['userId'] = data._id;
+        sessionStorage['username'] = data.username;
+    }
+
+    function clearSessionStorage() {
+        delete sessionStorage['sessionAuth'];
+        delete sessionStorage['userId'];
+        delete sessionStorage['username'];
+    }
 
     return {
         load: function (model, viewBag) {

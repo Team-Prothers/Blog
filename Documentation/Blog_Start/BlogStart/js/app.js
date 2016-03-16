@@ -21,6 +21,7 @@
         var commentController = app.commentController.load(commentModel, commentViewBag);
 
         this.get('#/', function () {
+            $('#sidebar').hide();
             this.redirect('#/login');
 
             // test na user
@@ -40,9 +41,12 @@
 
         this.get('#/logout', function () {
             userController.logout();
+            this.redirect('#/');
+            $('#sidebar').hide();
         });
 
         this.get('#/posts', function () {
+            $('#sidebar').show();
             postController.loadAllPosts(selector);
         });
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Cars Blog</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="Content/poppy-style.css" />
     <link rel="stylesheet" href="Content/bootstrap.css" />
     <link rel="stylesheet" href="css/site.css" />
@@ -18,8 +18,16 @@
 </head>
 <body>
     <div id="header"></div>
+    <span id="sidebar">
+        <ul>
+            <li><a href="#/home" class="link">Home</a></li>
+            <li><a href="#/posts/last-five" class="link">Last 5 Posts</a></li>
+            <li><a href="#/comments/last-five" class="link">Last 5 Comments</a></li>
+            <li><a href="#/logout" class="link">Logout</a></li>
+        </ul>
+    </span>
     <div id="container"></div>
-    <div id="sidebar"></div>
+
 
     <script src="js/helpers/fileReader.js"></script>
     <script src="js/helpers/requester.js"></script>

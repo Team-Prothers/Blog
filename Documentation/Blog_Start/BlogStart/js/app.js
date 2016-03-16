@@ -57,6 +57,14 @@
         this.get('#/addNewComment', function () {
             commentController.loadAddCommentPage(selector);
         });
+		
+		this.get('#/editComment', function () {
+            //commentController.loadEditCommentPage(selector);
+        });
+		
+		this.get('#/deleteComment', function () {
+            //commentController.loadDeleteCommentPage(selector);
+        });
 
         this.bind('redirectUrl', function (e, data) {
             this.redirect(data.url);

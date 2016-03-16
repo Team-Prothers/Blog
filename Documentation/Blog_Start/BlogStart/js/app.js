@@ -57,6 +57,17 @@
             postController.loadRecentPosts(selector, 5);
         });
 
+        this.get('#/posts/:id/comments', function () {
+            var id = this.params['id'];
+
+            var post = postController.getPostById(id).then(function(post) {
+                commentController.loadPostComments(selector, post);
+            }, function(error) {
+                console.error(error);
+            });
+
+        });
+
         this.get('#/addNewPost', function () {
             postController.loadAddPostPage(selector);
         });

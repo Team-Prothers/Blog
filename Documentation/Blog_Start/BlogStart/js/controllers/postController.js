@@ -41,6 +41,11 @@ app.postController = (function () {
             });
     };
 
+    PostController.prototype.getPostById = function (id) {
+        return this._model.getPostById(id);
+    };
+
+
     PostController.prototype.loadAddPostPage = function (selector) {
         this._viewBag.showAddNewPost(selector);
     };

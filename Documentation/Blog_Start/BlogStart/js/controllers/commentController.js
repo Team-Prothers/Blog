@@ -26,6 +26,26 @@ app.commentController = (function () {
             });
     };
 
+    CommentController.prototype.loadPostComments = function (selector, post) {
+        var _this = this;
+
+        this._model.getPostComments(post._id)
+            .then(function (successData) {
+                var result = {
+                    comments: []
+                };
+
+                successData.forEach(function (comment) {
+                    result.comments.push({
+                        text: comment.text,
+                        commentId: comment._id
+                    });
+                });
+
+                _this._viewBag.showPostComments(selector, post, result);
+            });
+    };
+
     CommentController.prototype.loadRecentComments = function (selector, numberOfComments) {
         var _this = this;
 

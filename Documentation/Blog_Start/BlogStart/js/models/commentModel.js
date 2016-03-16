@@ -9,6 +9,10 @@ app.commentModel = (function () {
     CommentModel.prototype.getAllComments = function () {
         return this._requester.get(this.serviceUrl, true);
     };
+    
+    CommentModel.prototype.getPostComments = function (postId) {
+        return this._requester.get(this.serviceUrl + '?query={"post._id":"' + postId + '"}', true);
+    };
 
     CommentModel.prototype.getRecentComments = function (numberOfComments) {
         return this._requester.get(

@@ -11,6 +11,18 @@ app.commentViews = (function () {
                 });
             });
         });
+    } 
+
+    function showPostComments(selector, post, data) {
+        $.get('templates/post-comments.html', function (template) {
+            var rendered = Mustache.render(template, data);
+            $(selector).html(rendered);
+            $('#addNewComment').on('click', function (e) {
+                Sammy(function () {
+                    this.trigger('redirectUrl', { url: '#/addNewComment' })
+                });
+            });
+        });
     }
 
     function showRecentComments(selector, data) {
@@ -38,6 +50,7 @@ app.commentViews = (function () {
             return {
                 showAllComments: showAllComments,
                 showRecentComments: showRecentComments,
+                showPostComments:showPostComments,
                 showAddNewComment: showAddNewComment
             }
         }

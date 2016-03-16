@@ -10,6 +10,10 @@ app.postModel = (function () {
         return this._requester.get(this.serviceUrl, true);
     };
 
+    PostModel.prototype.getPostById = function (id) {
+        return this._requester.get(this.serviceUrl + '/' + id, true);
+    };
+
     PostModel.prototype.getRecentPosts = function (numberOfPosts) {
         return this._requester.get(this.serviceUrl + '?query={}&sort=_kmd.lmt&limit=' + numberOfPosts, true);
     };

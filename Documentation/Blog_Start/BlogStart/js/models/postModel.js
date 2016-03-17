@@ -15,7 +15,7 @@ app.postModel = (function () {
     };
 
     PostModel.prototype.getRecentPosts = function (numberOfPosts) {
-        return this._requester.get(this.serviceUrl + '?query={}&sort=_kmd.lmt&limit=' + numberOfPosts, true);
+        return this._requester.get(this.serviceUrl + '?query={}&sort={_kmd.lmt:-1}&limit=' + numberOfPosts, true);
     };
 
     PostModel.prototype.addNewPost = function (data) {

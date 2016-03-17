@@ -7,17 +7,17 @@
             <li>
                 <h2>{{title}}</h2>
             </li>
-            <li><img src="{{ image }}" /></li>
+            <li>
+                <div class="image-container">
+                    <img class="thumbnail picture-preview" src="{{picture}}" />
+                </div>
+            </li>
             <li>{{content}}</li>
             <!--<li>{{visitsCount}}</li>
-            <li>{{user._id.username}}</li>-->
+        <li>{{user._id.username}}</li>-->
             <br />
             <li><strong>Added on: {{}}</strong></li>
-            <!--TODO: Under development <li>
-                {{#tags}}
-                <span>{{tags}}</span>
-                {{/tags}}
-            </li>-->
+            
             <li><a href="#/posts/{{postId}}/comments">Go to post</a></li>
         </ul>
     </li>

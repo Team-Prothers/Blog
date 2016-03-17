@@ -14,7 +14,7 @@ app.postViews = (function () {
     }
 
     function showRecentPosts(selector, data) {
-        $.get('templates/recent-posts.html', function (template) {
+        $.get('templates/posts.html', function (template) {
             var rendered = Mustache.render(template, data);
             $(selector).html(rendered);
         });

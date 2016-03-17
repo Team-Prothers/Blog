@@ -1,13 +1,16 @@
 ﻿{{#post}}
     <ul style="border: 1px solid black; margin: 10px">
-        <li>
-            <h2>Comments for post <u>{{title}}</u></h2>
-        </li>
-        <li><img src="{{ image }}" /></li>
-        <li>{{content}}</li>
-        <br />
-        <li><strong>Added on: {{_kmd.lmt}}</strong></li>
-    </ul>
+    <li>
+        <h2>Comments for post <u>{{title}}</u></h2>
+    </li>
+    <li>
+        <div class="image-container">
+            <img class="thumbnail picture-preview" src="{{picture}}" />
+        </div>
+    </li>
+    <li>{{content}}</li>
+    <li><strong>Added on: {{_kmd.lmt}}</strong></li>
+</ul>
 {{/post}}
 <ul style="margin: 20px">
     {{#comments}}

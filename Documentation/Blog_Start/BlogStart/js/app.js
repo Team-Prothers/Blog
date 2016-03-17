@@ -77,7 +77,7 @@
         });
 
         this.get('#/comments/recent', function () {
-            commentController.loadRecentComments(selector, 5);
+            commentController.loadRecentComments(selector,5);
         });
 
         this.get('#/addNewComment/:id', function () {

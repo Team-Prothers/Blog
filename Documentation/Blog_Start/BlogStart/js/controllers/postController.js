@@ -20,6 +20,7 @@ app.postController = (function () {
                         title: post.title,
                         content: post.content,
                         tags: post.tags,
+                        image: post.image,
                         dateAdded: post._kmd.lmt,
                         postId: post._id
                     });

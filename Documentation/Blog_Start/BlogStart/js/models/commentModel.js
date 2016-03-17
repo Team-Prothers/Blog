@@ -11,7 +11,7 @@ app.commentModel = (function () {
     };
     
     CommentModel.prototype.getPostComments = function (postId) {
-        return this._requester.get(this.serviceUrl + '?query={"post._id":"' + postId + '"}', true);
+        return this._requester.get(this.serviceUrl + '?query={"post._id":"' + postId + '"}&sort=_kmd.lmt', true);
     };
 
     CommentModel.prototype.getRecentComments = function (numberOfComments) {

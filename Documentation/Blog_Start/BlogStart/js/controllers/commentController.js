@@ -70,15 +70,15 @@ app.commentController = (function () {
             });
     };
 
-    CommentController.prototype.loadAddCommentPage = function (selector) {
-        this._viewBag.showAddNewComment(selector);
+    CommentController.prototype.loadAddCommentPage = function (selector, postId) {
+        this._viewBag.showAddNewComment(selector, postId);
     };
 
     CommentController.prototype.addNewComment = function (data) {
         this._model.addNewComment(data)
             .then(function () {
                 Sammy(function () {
-                    this.trigger('redirectUrl', { url: '#/comments' });
+                    this.trigger('redirectUrl', { url: '#/posts/' + data.post._id + '/comments' });
                 });
             });
     };

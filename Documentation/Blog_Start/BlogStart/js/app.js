@@ -80,8 +80,8 @@
             commentController.loadRecentComments(selector, 5);
         });
 
-        this.get('#/addNewComment', function () {
-            commentController.loadAddCommentPage(selector);
+        this.get('#/addNewComment/:id', function () {
+            commentController.loadAddCommentPage(selector, this.params['id']);
         });
 		
 		this.get('#/editComment', function () {

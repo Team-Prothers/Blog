@@ -19,7 +19,7 @@ app.commentViews = (function () {
             $(selector).html(rendered);
             $('#addNewComment').on('click', function (e) {
                 Sammy(function () {
-                    this.trigger('redirectUrl', { url: '#/addNewComment' })
+                    this.trigger('redirectUrl', { url: '#/addNewComment/' + data.post._id  });
                 });
             });
         });
@@ -32,14 +32,20 @@ app.commentViews = (function () {
         });
     }
 
-    function showAddNewComment(selector) {
+    function showAddNewComment(selector, postId) {
         $.get('templates/addNewComment.html', function (template) {
             var rendered = Mustache.render(template);
             $(selector).html(rendered);
             $('#addComment').on('click', function (e) {
                 var text = $('#text').val();
                 Sammy(function () {
-                    this.trigger('add-new-comment', { text: text });
+                    this.trigger('add-new-comment', {
+                        text: text, post: {
+                            "_type": "KinveyRef",
+                            "_id": postId,
+                            "_collection": "posts"
+                        }
+                    });
                 });
             });
         });

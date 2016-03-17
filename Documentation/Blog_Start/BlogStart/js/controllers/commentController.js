@@ -42,7 +42,11 @@ app.commentController = (function () {
                     });
                 });
 
-                _this._viewBag.showPostComments(selector, post, result);
+                var renderData = {};
+                renderData['post'] = post;
+                renderData['comments'] = successData;
+
+                _this._viewBag.showPostComments(selector, renderData);
             });
     };
 

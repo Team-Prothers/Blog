@@ -13,7 +13,7 @@ app.commentViews = (function () {
         });
     } 
 
-    function showPostComments(selector, post, data) {
+    function showPostComments(selector, data) {
         $.get('templates/post-comments.html', function (template) {
             var rendered = Mustache.render(template, data);
             $(selector).html(rendered);

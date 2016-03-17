@@ -1,4 +1,15 @@
-﻿<ul>
+﻿{{#post}}
+    <ul style="border: 1px solid black; margin: 10px">
+        <li>
+            <h2>Comments for post <u>{{title}}</u></h2>
+        </li>
+        <li><img src="{{ image }}" /></li>
+        <li>{{content}}</li>
+        <br />
+        <li><strong>Added on: {{_kmd.lmt}}</strong></li>
+    </ul>
+{{/post}}
+<ul style="margin: 20px">
     {{#comments}}
     <li data-id="{{commentId}}">
         <span readonly="readonly">{{text}}</span>
@@ -6,5 +17,5 @@
     {{/comments}}
 </ul>
 
-<button type="button" id="addNewComment">Add New Comment</button>
+<button style="margin: 20px" type="button" id="addNewComment">Add New Comment</button>
 <a href="#/posts">Go to all posts</a>

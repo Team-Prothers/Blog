@@ -27,9 +27,10 @@ app.postViews = (function () {
             $('#addPost').on('click', function (e) {
                 var title = $('#title').val(),
                     content = $('#content').val(),
-                    tag = $('#tags').val();
+                    picture = $('.picture-preview').attr('src');                    
+
                 Sammy(function () {
-                    this.trigger('add-new-post', { title: title, content: content, tags: tag });
+                    this.trigger('add-new-post', { title: title, content: content, picture: picture });
                 });
             });
         });

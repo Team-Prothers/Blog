@@ -20,7 +20,7 @@ app.postController = (function () {
                         title: post.title,
                         content: post.content,
                         tags: post.tags,
-                        image: post.image,
+                        picture: post.picture,
                         dateAdded: post._kmd.lmt,
                         postId: post._id
                     });
@@ -41,7 +41,7 @@ app.postController = (function () {
                 };
 
                 successData.forEach(function (post) {
-                    result.posts.push({ title: post.title, content: post.content, tags: post.tags, postId: post._id });
+                    result.posts.push({ title: post.title, content: post.content, picture: post.picture, postId: post._id });
                 });
 
                 _this._viewBag.showRecentPosts(selector, result);

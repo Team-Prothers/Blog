@@ -2,16 +2,16 @@
 var selector = document.body;
 
 // Trigger file selection window
-$(selector).on('click', '#upload-file-button', function () {
-    $('#picture').click();
+$(selector).on('click', '.upload-file-button', function () {
+    $('.picture').click();
 });
 
 // Reads the selected file and returns the data as a base64 encoded string
-$(selector).on('change', '#picture', function () {
+$(selector).on('change', '.picture', function () {
     var file = this.files[0],
         reader;
 
-    if (file.type.match(/image\/.*/) && file.size <= 128000) {
+    if (file.type.match(/image\/.*/) && file.size <= 255000) {
         reader = new FileReader();
         reader.onload = function (e) {
             file.name = reader.name;
